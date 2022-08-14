@@ -1,0 +1,47 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+{% block tile %}
+  Blogs
+{% endblock  %}
+{% block content %}
+<style>
+  .blog-card{
+    background: #8EB69B;
+    
+  }
+  .nav-link{
+   color: #8EB69B;
+}
+.side-bar{
+    background-color: #8EB69B;
+}
+</style>
+
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Update Post</h1>
+
+
+
+
+
+
+
+<div class="col-md-10 mt-3">
+    <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-outline-success">Update</button></div>
+    </form>
+</div>
+</div>
+
+
+</div>
+
+{% endblock %}
+
+
+

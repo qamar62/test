@@ -1,0 +1,68 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+{% block tile %}
+  Blogs
+{% endblock  %}
+{% block content %}
+<style>
+  .blog-card{
+    background: #8EB69B;
+  }
+  .side-bar {
+    background-color: #8eb69b28;
+  }
+  .blog-bar {
+    border: solid 6px #8EB69B  ;
+    border-radius: 25px;
+  }
+  
+</style>
+
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+
+<h3 class="text-center mb-5">QAM has written {{ object_list.count }} blog{{ object_list.count|pluralize }}</h3>
+
+
+
+<div class="col-md-12 mt-3 p-3 shadow-lg blog-bar">
+  <nav class="nav nav-pills nav-fill">
+    <a class="nav-link" aria-current="page" href="{% url 'add_post' %}">ADD</a>
+    <a class="nav-link" href="#">Category</a>
+    
+  
+  </nav>
+</div>
+
+
+
+<div class="col-md-12">
+{% for post in object_list %}
+
+<div class="card mt-3 blog-card">
+  <div class="card-header text-dark">
+    
+    <div class="d-flex justify-content-end mx-2 ">
+      <a class="px-3 nav-link-success text-dark" href="{%  url 'update_post' post.pk %}">Edit</a>
+      <a class="text-dark" href="{%  url 'delete_post' post.pk %}">Remove</a>
+    </div>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title text-dark fw-bold">{{ post.title }}</h2>
+    <p class="text-dark">{{ post.description|striptags|truncatechars:100 }}</p>
+    
+    <a href="{% url 'detail' post.pk %}" class="btn btn-outline btn-outline-dark btn-lg">More Detail</a>
+  </div>
+  <div class="card-footer d-flex justify-content-end text-dark shadow-sm">
+    <p class="card-text">{{ post.date|date:'M d Y'|upper }}</p>
+  </div>
+</div>
+
+{% endfor %}
+</div>
+
+
+
+
+{% endblock %}

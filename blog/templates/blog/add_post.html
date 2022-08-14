@@ -1,0 +1,54 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+{% block tile %}
+  Blogs
+{% endblock  %}
+{% block content %}
+<style>
+  .blog-card{
+    background: #8EB69B;
+    
+  }
+  .nav-link{
+   color: #8EB69B;
+}
+</style>
+
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Add Post</h1>
+
+
+
+<div class="row">
+<div class="col-md-2 mt-3">
+  <nav class="nav flex-column ">
+    <a class="nav-link" aria-current="page" href="{%url 'add_post' %}">
+      <button type="button" class="btn btn-outline-success">Add</button></a>
+     
+      <a class="nav-link" aria-current="page" href="{%url 'all_blogs' %}">
+      <button type="button" class="btn btn-outline-success">Back</button></a>
+
+  </nav>
+</div>
+
+
+
+<div class="col-md-8 mt-3">
+    <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-outline-success">Add</button></div>
+    </form>
+</div>
+</div>
+
+
+</div>
+
+{% endblock %}
+
+
+

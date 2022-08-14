@@ -1,0 +1,1 @@
+from qam.wsgi import application
