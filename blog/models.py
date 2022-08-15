@@ -30,7 +30,7 @@ class Blog(models.Model):
     
     
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title + '|' + self.author
 
     def get_absolute_url(self):
