@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime, date
 
 from django.urls import reverse
-
+from ckeditor.fields import RichTextField
 
 
 
@@ -25,7 +25,7 @@ class Blog(models.Model):
     title_tag = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextField(null = True)
     date = models.DateTimeField(auto_now_add=True)
     
     
