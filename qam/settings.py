@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'portfolio',
     'blog',
     'ckeditor',
+    'apps',
 ]
 
 MIDDLEWARE = [
