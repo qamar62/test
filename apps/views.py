@@ -8,9 +8,9 @@ import random
 def qrCode(request):
     if request.method == "POST":
         Url = request.POST['url']
-        img = make(Url)
+        img = str(make(Url))
         img_name = f'qrimg{random.randint(1, 1000)}.png'
-        str(img.save(settings.MEDIA_ROOT/img_name))
+        img.save(settings.MEDIA_ROOT/img_name)
         return render(request, 'apps/qrcode.html', {'img':img_name})
     
     return render(request,'apps/qrcode.html')
