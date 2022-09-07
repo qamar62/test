@@ -10,11 +10,11 @@ from .forms import BlogFrom
 
 class BlogView(ListView):
     model = Blog
-    template_name = 'blog/all_blogs.html'
+    template_name = 'blog/blogs.html'
 
 class BlogDetailView(DetailView):
     model = Blog
-    template_name = 'blog/blog_detail.html'
+    template_name = 'blog/blogDetail.html'
 
 class BlogCreateView(CreateView):
     model = Blog
