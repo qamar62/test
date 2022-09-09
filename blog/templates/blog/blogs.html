@@ -38,7 +38,8 @@
 									</ul>
 								</div>
 								<div class="overflow-hidden mb-4">
-									<h1 class="d-block text-color-quaternary font-weight-bold line-height-3 text-center mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="1000">Blog</h1>
+									<h1 class="d-block text-color-quaternary font-weight-bold line-height-3 text-center mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="1000">Blog</h1><br>
+									<h5>QAM has written {{ object_list.count }} blog{{ object_list.count|pluralize }}</h5>
 								</div>
 							</div>
 						</div>
@@ -59,10 +60,10 @@
 											<a href="demo-seo-2-blog-post.html">
 												<img class="card-img-top border-radius-0" src="img/demos/seo-2/blog/blog-1.jpg" alt="Card Image">
 											</a>
-											<p class="text-uppercase text-1 mb-3 pt-1 text-color-default"><time pubdate datetime="2022-01-10">10 Jan 2022</time> <span class="opacity-3 d-inline-block px-2">|</span> 3 Comments <span class="opacity-3 d-inline-block px-2">|</span> John Doe</p>
+											<p class="text-uppercase text-1 mb-3 pt-1 text-color-default"><time pubdate datetime="2022-01-10">{{ post.date|date:'M d Y'|upper }}</time> <span class="opacity-3 d-inline-block px-2">|</span> 3 Comments <span class="opacity-3 d-inline-block px-2">|</span> {{post.author}}</p>
 											<div class="card-body p-0">
-												<h4 class="card-title mb-3 text-5 font-weight-semibold"><a class="text-color-dark" href="demo-seo-2-blog-post.html">An Interview with John Doe</a></h4>
-												<p class="card-text mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra lorem ipsum erat orci, ac auctor lacus tincidunt ut...</p>
+												<h4 class="card-title mb-3 text-5 font-weight-semibold"><a class="text-color-dark" href="demo-seo-2-blog-post.html">{{ post.title }}</a></h4>
+												<p class="card-text mb-3">{{ post.description|striptags|truncatechars:100 }}</p>
 												<a href="{% url 'blog-detail' post.id %}" class="text-color-tertiary font-weight-bold text-uppercase text-decoration-none d-block mt-3">Read More +</a>
 											</div>
 										</div>
