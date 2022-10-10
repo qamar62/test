@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-7f+3sgx@oi%07&qx6byhq7g=@5pbb=n39k)4n32yq!&@7g)%=4
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['iamqam.xyz', '127.0.0.1', ]
 
 
 INSTALLED_APPS = [
