@@ -11,6 +11,8 @@ from .forms import BlogFrom
 class BlogView(ListView):
     model = Blog
     template_name = 'blog/blogs.html'
+    paginate_by = 3
+    
 
 class BlogDetailView(DetailView):
     model = Blog
