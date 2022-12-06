@@ -31,7 +31,7 @@
                                     <i class="icon-phone icons text-4 me-2"></i> (+971) 529733130
                                 </a>
                                 {% if not request.user.is_authenticated %}
-                                <a href="" class="btn btn-dark font-weight-semibold text-3 px-4 custom-height-1 rounded-0 align-items-center d-none d-md-flex">
+                                <a href="{% url 'login' %}" class="btn btn-dark font-weight-semibold text-3 px-4 custom-height-1 rounded-0 align-items-center d-none d-md-flex">
                                     
                                     <i class="icon-user icons text-4 me-2"></i>
                                     Login</a>
@@ -99,7 +99,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="nav-link" href="demo-seo-2-contact-us.html">
+                                                <a class="nav-link" href="{% url 'contact-us' %}">
                                                     Contact Us
                                                 </a>
                                             </li>
