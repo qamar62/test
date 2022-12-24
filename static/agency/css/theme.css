@@ -333,6 +333,13 @@ pre {
 	top: 0;
 	image-rendering: -webkit-optimize-contrast;
 	transform: translateZ(0);
+	filter:grayscale();
+	
+	
+}
+#header .header-logo img:hover {
+	filter:none
+	
 }
 
 #header .header-nav {
