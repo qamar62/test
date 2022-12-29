@@ -9,6 +9,7 @@ class Project(models.Model):
     description = models.CharField(max_length=250)
     image = models.ImageField(upload_to='images', null=True, blank=True)
     url = models.URLField(blank=True)
+    project_level = models.CharField(max_length=50, choices=(("Normal", "Normal"), ("Advance", "Advance")), default="Normal")
 
 
     def __str__(self):
