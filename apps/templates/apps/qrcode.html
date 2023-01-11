@@ -42,6 +42,8 @@
             <div>
             {% if img %}
             <h3>Your QR code is: <img src="/media/{{img}}"></h3>
+            <img src="{% url 'generate_qr' data %}">
+
             {% endif %}
             </div>
             </div>
