@@ -4,5 +4,5 @@ from apps.views import qrCode
 from . import views
 
 urlpatterns = [
-    path('', views.qrCode, name='qrcode-generator'),
+    path('qr/<str:data>/', views.generate_qr, name='generate_qr'),
 ]
